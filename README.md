@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Chip AutoComplete Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a React component called `ChipAutoComplete` which provides functionality similar to the provided design. The component allows users to input tags, create chips from the input, remove chips, and displays suggestions dynamically.
 
-## Available Scripts
+## Functionality
 
-In the project directory, you can run:
+- Users can type in the search box, and upon pressing Enter, a chip is created with the typed text.
+- Chips can be removed by clicking on the cross icon.
+- Duplicate chips are not allowed. Once added, they are removed from the suggestions list.
+- Suggestions list dynamically updates as the user types.
+- Blue highlights are applied to dynamically match the input text in the suggestions list.
+- The app is mobile responsive up to 400px.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Single reusable component: The `ChipAutoComplete` component can be used anywhere in the app.
+- Handles necessary edge cases such as duplicate chips and empty input.
+- Additional features:
+  - Loading indicator: Simulates loading with a loading message.
+  - Clear all chips button: Allows users to clear all chips at once.
+  - No results message: Displays when there are no matching suggestions.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- React: Used for building the UI components.
+- PropTypes: Used for type-checking the component props.
+- CSS: Custom styling for the component.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Thought Process
 
-### `npm run build`
+#### Understanding Requirements:
+- **Initial Assessment**: First, I carefully read through the provided requirements and analyzed the design mockup to understand the functionality and appearance expected.
+- **Component Breakdown**: I identified the key features required and components needed to fulfill the functionality, such as input handling, chip creation, chip removal, and dynamic suggestions.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Planning and Architecture:
+- **Component Design**: I planned to create a single reusable component, `ChipAutoComplete`, encapsulating all the required functionality.
+- **Props Design**: I considered the props needed to make the component flexible and customizable, such as suggestions list, placeholder text, loading indicator, etc.
+- **State Management**: I decided to use React's state management to handle user input, chip creation, suggestion filtering, and loading states.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Development:
+- **Step-by-Step Implementation**: I followed an incremental development approach, starting with basic functionality and gradually adding more features.
+- **Commit Strategy**: I committed changes at regular intervals, making it easier to track progress and roll back changes if needed.
+- **Testing**: I continuously tested the component as I implemented each feature, ensuring it behaves as expected in various scenarios.
+- **Edge Cases Handling**: I paid special attention to handling edge cases, such as empty input, duplicate chips, and keyboard navigation.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Styling and Responsiveness:
+- **Styling Approach**: I used custom CSS for styling, aiming to match the provided design as closely as possible.
+- **Responsive Design**: I ensured that the component is mobile-responsive up to 400px width, making adjustments to layout and styling as needed.
 
-### `npm run eject`
+#### Documentation:
+- **Readme**: I documented the component's usage, functionality, features, tech stack, and edge cases handling in the readme file to provide clear instructions and insights into the development process.
+- **Code Comments**: I added comments within the code to explain complex logic, improve readability, and aid future maintenance.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Future Considerations:
+- **Feature Enhancement**: I brainstormed potential future improvements, such as adding animations, more customization options, and accessibility enhancements.
+- **Community Contribution**: I kept the project open to community contributions, inviting feedback, suggestions, and contributions to improve the component further.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To use the `ChipAutoComplete` component, import it into your React application and pass the necessary props:
+``` import ChipAutoComplete from './ChipAutoComplete'; 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+function App() {
+  return (
+    <div className="App">
+      <ChipAutoComplete 
+        suggestions={['React', 'JavaScript', 'CSS', ...]} 
+        noResultsMessage="No matching suggestions found" 
+        loadingMessage="Loading..." 
+        placeholder="Enter a tag" 
+        showLoading={true} 
+      />
+    </div>
+  );
+}
 
-## Learn More
+export default App; ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Edge Cases Handling
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Empty input**: If the user tries to add an empty tag, it's not added as a chip.
+- **Duplicate chips**: Chips are filtered out from the suggestions list to prevent duplicates.
+- **Keyboard navigation**: Users can navigate through suggestions using the arrow keys.
 
-### Code Splitting
+## Styling and Responsiveness
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Styling Approach**: Custom CSS is used for styling, aiming to match the provided design as closely as possible.
+- **Responsive Design**: The component is mobile-responsive up to 400px width, making adjustments to layout and styling as needed.

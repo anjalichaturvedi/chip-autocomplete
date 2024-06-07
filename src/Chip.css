@@ -1,4 +1,3 @@
-/* src/components/Chip.css */
 body {
     font-family: 'Inter', sans-serif;
     margin-top: 200px;
@@ -68,7 +67,6 @@ body {
     cursor: pointer;
   }
   
-  /* Remove border-bottom for all suggestions */
   .suggestion:not(:last-child) {
     border-bottom: 1px solid #ccc;
   }
