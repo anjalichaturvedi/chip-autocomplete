@@ -1,6 +1,6 @@
 # Chip AutoComplete Component
 
-This repository contains a React component called `ChipAutoComplete` which provides functionality similar to the provided design. The component allows users to input tags, create chips from the input, remove chips, and displays suggestions dynamically.
+This repository contains a React component called `ChipAutoComplete` in `Chip.js `which provides functionality similar to the provided design in the assignment by HyreSnap. The component allows users to input tags, create chips from the input, remove chips, and displays suggestions dynamically.
 
 ## Functionality
 
@@ -49,11 +49,7 @@ This repository contains a React component called `ChipAutoComplete` which provi
 
 #### Documentation:
 - **Readme**: I documented the component's usage, functionality, features, tech stack, and edge cases handling in the readme file to provide clear instructions and insights into the development process.
-- **Code Comments**: I added comments within the code to explain complex logic, improve readability, and aid future maintenance.
 
-#### Future Considerations:
-- **Feature Enhancement**: I brainstormed potential future improvements, such as adding animations, more customization options, and accessibility enhancements.
-- **Community Contribution**: I kept the project open to community contributions, inviting feedback, suggestions, and contributions to improve the component further.
 
 ## Usage
 
@@ -74,13 +70,20 @@ function App() {
   );
 }
 
-export default App; ```
+export default App;
+```
 
 ## Edge Cases Handling
 
 - **Empty input**: If the user tries to add an empty tag, it's not added as a chip.
 - **Duplicate chips**: Chips are filtered out from the suggestions list to prevent duplicates.
 - **Keyboard navigation**: Users can navigate through suggestions using the arrow keys.
+
+## Bonus Tasks Done
+- **No results found**: Added "No results found" functionalities in case no results are found
+- **Clear All Button**: User can clear all tags using the "Clear All" button
+- **Blue highlights on each autosuggestions list dynamically**: Like, listed in the assignment
+- **Responsive**: The web-app is responsive on mobile devices as well.
 
 ## Styling and Responsiveness
 
